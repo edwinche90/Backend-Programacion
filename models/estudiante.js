@@ -8,7 +8,7 @@ const studenSchema= new mongoose.Schema({
         type:Number,
         required:false
     }
-    //requistro: Date.now
+  
 });
 
 module.exports = mongoose.model('estudiante', studenSchema);
