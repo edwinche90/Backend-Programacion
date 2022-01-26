@@ -5,7 +5,7 @@
  require ('dotenv/config');
  const servidor = express();
  const PORT = process.env.PORT|| 3000;
- const Estudiante = require('./models/estudiante');
+ const estudiante = require('./models/estudiante');
  const Router = require('./routers/router');
 
 

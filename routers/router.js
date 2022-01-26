@@ -9,4 +9,7 @@ router.get('/',(req,res)=>{
 
 router.get('/estudiantes', estudianteController.getEstudiantes);
 
+router.get('/nuevoestudiante', estudianteController.postNuevoEstudiante);
+router.post('/nuevoestudiante', estudianteController.postNuevoEstudiante);
+
 module.exports = router;
