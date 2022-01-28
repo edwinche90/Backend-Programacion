@@ -1,15 +1,15 @@
 const express = require('express');
 const router  = express.Router();
-const estudianteController = require('../controllers/controller');
+const estudianteControlador = require('../controlador/controlador');
 
 router.get('/',(req,res)=>{
     res.send("hola desde router!")
 });
 
 
-router.get('/estudiantes', estudianteController.getEstudiantes);
-router.get('/nuevoestudiante', estudianteController.postNuevoEstudiante);
-router.post('/nuevoestudiante', estudianteController.postNuevoEstudiante);
-router.post('/detalle',estudianteController.getDetalleEstudiante);
+router.get('/estudiantes', estudianteControlador.getEstudiantes);
+router.get('/nuevoestudiante', estudianteControlador.postNuevoEstudiante);
+router.post('/nuevoestudiante', estudianteControlador.postNuevoEstudiante);
+router.post('/detalle',estudianteControlador.getDetalleEstudiante);
 
 module.exports = router;
