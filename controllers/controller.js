@@ -1,5 +1,6 @@
 //const htmlGetEstudiantes = 'pego aca codigo de html en formato table';
 //const estudiantes = require('../models/estudiante');
+const { send } = require('express/lib/response');
 const mongoose = require('mongoose');
 const Estudiante = mongoose.model('estudiante');
 
@@ -24,7 +25,19 @@ exports.postNuevoEstudiante = function(req,res){
     })
     //console.log(req.body);  <--- para explicacion de creacion de datos desde posman
      //console.log(nuevoEstudiante); <--- ACA observamos como se crea el ID desde mongo DB desde posman
-   
-   
-
 }
+
+exports.getDetalleEstudiante = function(req,res){
+    let {id} = req.body;
+    
+    Estudiante.findById(id, function(err,result){
+        if(err){
+            res,send(500,err.message);
+        }
+        res.json(result);
+    });
+
+ 
+}
+
+
